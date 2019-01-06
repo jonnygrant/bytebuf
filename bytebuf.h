@@ -14,16 +14,18 @@ struct bytebuf
 
 /* Returns 0 on success, or an errno value */
 int bytebuf_alloc(struct bytebuf * buf, size_t size);
-int bytebuf_free(struct bytebuf * buf);
+int bytebuf_free(struct bytebuf * const buf);
 
 /* Returns 0 on success, or EF2BIG if no space, EFAULT if any pointers are bad */
-int bytebuf_cpy(struct bytebuf * dest, const struct bytebuf * src);
+int bytebuf_cpy(struct bytebuf * const dest, const struct bytebuf * src);
 
 /* Returns 0 on success, or EF2BIG if no space, EFAULT if any pointers are bad */
-int bytebuf_cat(struct bytebuf * dest, const struct bytebuf * src);
+int bytebuf_cat(struct bytebuf * const dest, const struct bytebuf * src);
 
 /* Returns 0 on success, or ENOMEM, or EFAULT if any pointers are bad */
-int bytebuf_dup(struct bytebuf * dest, const struct bytebuf * src);
+int bytebuf_dup(struct bytebuf * const dest, const struct bytebuf * src);
+
+/* Returns 0 on success, or EFAULT if any pointers are bad */
+int bytebuf_set(struct bytebuf * const dest, uint8 value);
 
 #endif
-
