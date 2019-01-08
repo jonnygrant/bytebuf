@@ -1,9 +1,9 @@
 #ifndef BYTEBUF_H
 #define BYTEBUF_H
 
-/* Intended as a replacement for tradditional C-strings
+/* Intended as a replacement for traditional C-strings
  Backwards compatible with traditional C-strings, as still internally NUL terminated.
- There is no tructate in these APIs, add a new bytebuf_cpy_trucate() if needed. */
+ There is no truncate in these APIs, add a new bytebuf_cpy_truncate() if needed. */
 
 struct bytebuf
 {
